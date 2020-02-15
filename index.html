@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>particles.js</title>
+  <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+  <meta name="author" content="Vincent Garreau" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="logo"><a href=="#">RYOKA HONJI</a></div>
+    <nav>
+      <ul>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#column">COLUMN</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+
+
+    </nav>
+    </div>
+
+  </header>
+
+
+  <main>
+  　　<div class="section-first">
+        <h1>纏うを選ぶ</h1>
+
+        <h2>年間100万トン 33億着の服が捨てられている今。<br>
+            私たちの衣類を“選ぶ”にもう一度責任と価値の創出を<br>一緒に考えていくそんなコラムを提供していきます。</h2>
+          <button>READ MORE</button>
+    　</div>
+
+
+      <div class="section-second">
+            <h3>POPULAR　COLUMN<h3>
+
+      </div>
+
+    </main>
+
+
+
+
+  <footer>
+
+
+
+  </footer>
+
+
+<!-- count particles -->
+<div class="count-particles">
+  <span class="js-count-particles">--</span> particles
+</div>
+
+<!-- particles.js container -->
+<div id="particles-js"></div>
+
+<!-- scripts -->
+<script src="js/particles.min.js"></script>
+<script src="js/app.js"></script>
+
+<!-- stats.js -->
+<script src="js/lib/stats.js"></script>
+<script>
+  var count_particles, stats, update;
+  stats = new Stats;
+  stats.setMode(0);
+  stats.domElement.style.position = 'absolute';
+  stats.domElement.style.left = '0px';
+  stats.domElement.style.top = '0px';
+  document.body.appendChild(stats.domElement);
+  count_particles = document.querySelector('.js-count-particles');
+  update = function() {
+    stats.begin();
+    stats.end();
+    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+    }
+    requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+</script>
+
+
+
+</body>
+</html>
